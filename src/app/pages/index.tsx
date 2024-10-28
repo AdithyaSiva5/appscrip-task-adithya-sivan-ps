@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from 'react';
-import Header from './components/Header/Header';
-import ProductGrid from './components/ProductGrid/ProductGrid';
-import CategoryFilter from './components/CategoryFilter/CategoryFilter';
-import Footer from './components/Footer/Footer';
-import { Product } from './types/Product';
-import { api } from './services/api'
-import styles from './page.module.css';
+import Header from '../components/Header/Header';
+import ProductGrid from '../components/ProductGrid/ProductGrid';
+import CategoryFilter from '../components/CategoryFilter/CategoryFilter';
+import Footer from '../components/Footer/Footer';
+import { Product } from '../types/Product';
+import { api } from '../services/api';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -38,7 +38,7 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>DISCOVER OUR PRODUCTS</h1>
-        <CategoryFilter
+        <CategoryFilter 
           onCategorySelect={setSelectedCategory}
           selectedCategory={selectedCategory}
         />

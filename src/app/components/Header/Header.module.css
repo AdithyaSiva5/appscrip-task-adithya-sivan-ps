@@ -1,0 +1,27 @@
+.header {
+    padding: 20px 40px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .menu li {
+    cursor: pointer;
+  }
