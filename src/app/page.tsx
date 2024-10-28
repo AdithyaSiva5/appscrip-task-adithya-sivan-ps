@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from 'react';
-import Header from './components/Header/Header';
-import ProductGrid from './components/ProductGrid/ProductGrid';
-import CategoryFilter from './components/CategoryFilter/CategoryFilter';
-import Footer from './components/Footer/Footer';
-import { Product } from './types/Product';
-import { api } from './services/api'
+import Header from '@/components/Header/Header';
+import ProductGrid from '@/components/ProductGrid/ProductGrid';
+import CategoryFilter from '@/components/CategoryFilter/CategoryFilter';
+import Footer from '@/components/Footer/Footer';
+import { Product } from '@/types/Product';
+import { api } from '@/services/api';
 import styles from './page.module.css';
 
 export default function Home() {

@@ -1,4 +1,7 @@
-import { Product } from '../../types/Product';
+"use client"
+import { useState } from 'react';
+import { Heart } from 'lucide-react';
+import { Product } from '@/types/Product';
 import styles from './ProductCard.module.css';
 
 interface ProductCardProps {
@@ -6,10 +9,18 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img src={product.image} alt={product.title} />
+        <button 
+          className={`${styles.wishlistButton} ${isWishlisted ? styles.wishlisted : ''}`}
+          onClick={() => setIsWishlisted(!isWishlisted)}
+        >
+          <Heart size={20} fill={isWishlisted ? "currentColor" : "none"} />
+        </button>
       </div>
       <div className={styles.details}>
         <h3>{product.title}</h3>

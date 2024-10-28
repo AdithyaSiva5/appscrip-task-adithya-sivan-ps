@@ -58,3 +58,32 @@
     text-transform: uppercase;
     margin: 5px 0 0;
   }
+
+  .wishlistButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+  }
+  
+  .wishlistButton:hover {
+    transform: scale(1.1);
+  }
+  
+  .wishlisted {
+    color: #ff4d4d;
+  }
+  
+  .imageContainer {
+    position: relative;
+  }

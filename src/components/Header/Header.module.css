@@ -1,0 +1,130 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.topBanner {
+  background: black;
+  color: white;
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.bannerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.logoIcon {
+  font-size: 28px;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 30px;
+}
+
+.desktopNav a {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.langSelect {
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .topBanner {
+    display: none;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logoIcon {
+    font-size: 24px;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    gap: 20px;
+    border-top: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .icons {
+    gap: 10px;
+  }
+
+  .langSelect {
+    display: none;
+  }
+}
