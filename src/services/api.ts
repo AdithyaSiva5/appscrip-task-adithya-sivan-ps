@@ -1,12 +1,12 @@
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = "https://fakestoreapi.com";
 
 export const api = {
-  getAllProducts: async (sort?: 'asc' | 'desc', limit?: number) => {
+  getAllProducts: async (sort?: "asc" | "desc", limit?: number) => {
     let url = `${BASE_URL}/products`;
     if (sort || limit) {
-      url += '?';
+      url += "?";
       if (sort) url += `sort=${sort}`;
-      if (limit) url += `${sort ? '&' : ''}limit=${limit}`;
+      if (limit) url += `${sort ? "&" : ""}limit=${limit}`;
     }
     const res = await fetch(url);
     return res.json();
@@ -20,5 +20,5 @@ export const api = {
   getProductsByCategory: async (category: string) => {
     const res = await fetch(`${BASE_URL}/products/category/${category}`);
     return res.json();
-  }
+  },
 };

@@ -1,25 +1,198 @@
 .footer {
-    background: #f5f5f5;
-    padding: 40px 20px;
-    margin-top: 60px;
+  background: black;
+  color: white;
+  width: 100%;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Newsletter Section */
+.newsletterSection {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 1rem;
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  background: white;
+  color: black;
+  border: none;
+}
+
+.subscribeBtn {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribeBtn:hover {
+  background: white;
+  color: black;
+}
+
+/* Contact & Currency Section */
+.contactSection {
+  margin-bottom: 2rem;
+}
+
+.currencySelector {
+  margin-top: 1rem;
+}
+
+.currencyGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currencyNote {
+  font-size: 0.875rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* Links Grid */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.linkSection {
+  margin-bottom: 1rem;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+}
+
+.linkItem {
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.linkItem:hover {
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Payment Methods */
+.paymentSection {
+  margin-top: 2rem;
+}
+
+.paymentIcons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.paymentIcon {
+  height: 1.5rem;
+}
+
+/* Copyright */
+.copyright {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Mobile Accordion */
+.accordionItem {
+  border-bottom: 1px solid #333;
+}
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  padding: 0.5rem 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .linksGrid {
+    display: none;
   }
   
-  .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+  .mobileAccordion {
+    display: block;
   }
   
-  .section h4 {
-    margin-bottom: 20px;
-    font-size: 18px;
+  .desktopContact {
+    display: none;
   }
   
-  .section p {
-    margin: 10px 0;
-    color: #666;
-    cursor: pointer;
+  .mobileContact {
+    display: block;
   }
   
+  .inputGroup {
+    flex-direction: column;
+  }
+  
+  .subscribeBtn {
+    width: 100%;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .mobileAccordion {
+    display: none;
+  }
+  
+  .mobileContact {
+    display: none;
+  }
+  
+  .desktopContact {
+    display: block;
+  }
+}

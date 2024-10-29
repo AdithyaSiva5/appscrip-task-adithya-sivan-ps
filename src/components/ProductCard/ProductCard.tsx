@@ -15,7 +15,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img src={product.image} alt={product.title} />
-        <button 
+        <button
           className={`${styles.wishlistButton} ${isWishlisted ? styles.wishlisted : ''}`}
           onClick={() => setIsWishlisted(!isWishlisted)}
         >

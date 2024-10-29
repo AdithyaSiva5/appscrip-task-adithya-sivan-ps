@@ -1,0 +1,70 @@
+/* RecommendationSort.module.css */
+.recommendationSort {
+    position: relative;
+    z-index: 50;
+  }
+  
+  .sortButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 160px;
+    justify-content: space-between;
+  }
+  
+  .arrow {
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+  }
+  
+  .arrowOpen {
+    transform: rotate(180deg);
+  }
+  
+  .sortDropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 50;
+    min-width: 200px;
+    border-radius: 4px;
+  }
+  
+  .sortOption {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .sortOption:hover {
+    background: #f5f5f5;
+  }
+  
+  .sortOption:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+  
+  @media (max-width: 768px) {
+    .sortButton {
+      min-width: 140px;
+      padding: 0.5rem 0.75rem;
+    }
+    
+    .sortDropdown {
+      min-width: 180px;
+    }
+  }
