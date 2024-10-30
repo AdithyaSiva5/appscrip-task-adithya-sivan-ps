@@ -2,19 +2,20 @@
 import { useState } from 'react';
 import styles from './FilterSidebar.module.css';
 import { FilterState } from '@/types/Product';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-
+import { ChevronDown, ChevronUp, X } from 'lucide-react';
 
 export const FilterSidebar = ({
   totalItems,
   onFilterChange,
   isMobile = false,
-  isVisible
+  isVisible,
+  onClose
 }: {
   totalItems: number
   onFilterChange: (filters: FilterState) => void
   isMobile?: boolean
   isVisible: boolean
+  onClose?: () => void
 }) => {
   const [filters, setFilters] = useState<FilterState>({
     customizable: false,
@@ -52,36 +53,44 @@ export const FilterSidebar = ({
     }
   });
 
-  const [expandedFilter, setExpandedFilter] = useState<keyof FilterState | null>(null)
+  const [expandedFilter, setExpandedFilter] = useState<keyof FilterState | null>(null);
 
   const handleFilterChange = (category: keyof FilterState, value: string) => {
-    const newFilters = { ...filters }
+    const newFilters = { ...filters };
 
     if (category === 'customizable') {
-      newFilters.customizable = !newFilters.customizable
+      newFilters.customizable = !newFilters.customizable;
     } else {
-      const categoryFilters = newFilters[category] as { selected: string[]; options: string[] }
+      const categoryFilters = newFilters[category] as { selected: string[]; options: string[] };
       if (categoryFilters.selected.includes(value)) {
-        categoryFilters.selected = categoryFilters.selected.filter(item => item !== value)
+        categoryFilters.selected = categoryFilters.selected.filter(item => item !== value);
       } else {
-        categoryFilters.selected = [...categoryFilters.selected, value]
+        categoryFilters.selected = [...categoryFilters.selected, value];
       }
     }
 
-    setFilters(newFilters)
-    onFilterChange(newFilters)
-  }
+    setFilters(newFilters);
+    onFilterChange(newFilters);
+  };
 
   const handleFilterExpand = (category: keyof FilterState) => {
-    setExpandedFilter(expandedFilter === category ? null : category)
-  }
+    setExpandedFilter(expandedFilter === category ? null : category);
+  };
+
   if (!isVisible) {
-    return null
+    return null;
   }
 
   return (
     <div className={styles.filterSidebar}>
-      
+      {isMobile && (
+        <div className={styles.filterHeader}>
+          <h3>FILTERS</h3>
+          <button onClick={onClose} className={styles.closeButton}>
+            <X size={24} />
+          </button>
+        </div>
+      )}
 
       <div className={styles.filterContent}>
         <div className={styles.filterSection}>
@@ -96,7 +105,7 @@ export const FilterSidebar = ({
         </div>
 
         {Object.entries(filters).map(([category, filterData]) => {
-          if (category === 'customizable') return null
+          if (category === 'customizable') return null;
           return (
             <div key={category} className={styles.filterSection}>
               <div
@@ -125,9 +134,9 @@ export const FilterSidebar = ({
                 </div>
               )}
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};

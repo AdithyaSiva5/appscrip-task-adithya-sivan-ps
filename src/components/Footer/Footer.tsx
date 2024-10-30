@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import styles from './Footer.module.css';
 
+
 const Footer = () => {
   const [openSections, setOpenSections] = useState({
     quickLinks: false,
@@ -19,7 +20,6 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Newsletter Section */}
         <div className={styles.newsletterSection}>
           <h3 className={styles.title}>BE THE FIRST TO KNOW</h3>
           <p>Sign up for updates from mettā muse.</p>
@@ -33,7 +33,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact & Currency Section */}
         <div className={styles.contactSection}>
           <div className={styles.desktopContact}>
             <h3 className={styles.title}>CONTACT US</h3>
@@ -48,7 +47,7 @@ const Footer = () => {
           <div className={styles.currencySelector}>
             <h3 className={styles.title}>CURRENCY</h3>
             <div className={styles.currencyGroup}>
-              <img src="/api/placeholder/20/20" alt="USD flag" /> USD
+              {/* <img src="/api/placeholder/20/20" alt="USD flag" /> USD */}USD
             </div>
             <p className={styles.currencyNote}>
               Transactions will be completed in Euros and a currency reference is available on hover.
@@ -56,7 +55,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Desktop Links */}
         <div className={styles.linksGrid}>
           <div className={styles.linkSection}>
             <h3 className={styles.title}>mettā muse</h3>
@@ -86,13 +84,12 @@ const Footer = () => {
           <div className={styles.linkSection}>
             <h3 className={styles.title}>FOLLOW US</h3>
             <div className={styles.socialIcons}>
-              <img src="/api/placeholder/24/24" alt="Instagram" />
-              <img src="/api/placeholder/24/24" alt="LinkedIn" />
+              <img src="/images/insta.png" alt="Instagram" />
+              <img src="/images/linkedin.png" alt="LinkedIn" />
             </div>
           </div>
         </div>
 
-        {/* Mobile Accordion */}
         <div className={styles.mobileAccordion}>
           <div className={styles.accordionItem}>
             <button
@@ -162,21 +159,15 @@ const Footer = () => {
             )}
           </div>
         </div>
-
-        {/* Payment Methods */}
         <div className={styles.paymentSection}>
           <h3 className={styles.title}>mettā muse ACCEPTS</h3>
           <div className={styles.paymentIcons}>
-            <img src="/api/placeholder/40/24" alt="Google Pay" className={styles.paymentIcon} />
-            <img src="/api/placeholder/40/24" alt="Mastercard" className={styles.paymentIcon} />
-            <img src="/api/placeholder/40/24" alt="PayPal" className={styles.paymentIcon} />
-            <img src="/api/placeholder/40/24" alt="American Express" className={styles.paymentIcon} />
-            <img src="/api/placeholder/40/24" alt="Apple Pay" className={styles.paymentIcon} />
-            <img src="/api/placeholder/40/24" alt="Shop Pay" className={styles.paymentIcon} />
+            <img src="/images/gpay.png" alt="Google Pay" className={styles.paymentIcon} />
+            <img src="/images/mastercard.png" alt="Mastercard" className={styles.paymentIcon} />
+            <img src="/images/paypal.png" alt="PayPal" className={styles.paymentIcon} />
           </div>
         </div>
 
-        {/* Copyright */}
         <div className={styles.copyright}>
           Copyright © 2023 mettamuse. All rights reserved.
         </div>

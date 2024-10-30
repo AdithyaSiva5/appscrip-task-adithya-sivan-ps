@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Header.module.css';
 import { Search, Heart, ShoppingBag, User, Menu } from 'lucide-react';
+import logo from "../../../public/images/Logo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className={styles.header}>
-      {/* Top banner */}
       <div className={styles.topBanner}>
         <div className={styles.bannerContent}>
           <span>Lorem ipsum dolor</span>
@@ -18,22 +19,40 @@ const Header = () => {
       </div>
 
       <div className={styles.mainHeader}>
-        {/* Mobile menu button */}
-        <button 
-          className={styles.mobileMenuButton}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <Menu size={24} />
-        </button>
+        <div className={styles.headerTop}>
+          <div className={styles.leftSection}>
+            <button className={styles.mobileMenuButton} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              <Menu size={24} />
+            </button>
+            <div className={styles.logoIcon}>
+              <Image
+                src={logo}
+                alt="Logo"
+              />
+            </div>
+          </div>
 
-        {/* Logo */}
-        <Link href="/" className={styles.logo}>
-          <div className={styles.logoIcon}>☘</div>
-          <div className={styles.logoText}>LOGO</div>
-        </Link>
+          <div className={styles.centerSection}>
+            <Link href="/" className={styles.logoText}>
+              LOGO
+            </Link>
+          </div>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.desktopNav}>
+          <div className={styles.rightSection}>
+            <div className={styles.icons}>
+              <button className={styles.iconSearch}><Search size={20} /></button>
+              <button><Heart size={20} /></button>
+              <button><ShoppingBag size={20} /></button>
+              <button><User size={20} /></button>
+              <select className={styles.langSelect}>
+                <option value="en">ENG</option>
+                <option value="es">ESP</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <nav className={styles.mainNav}>
           <Link href="/shop">SHOP</Link>
           <Link href="/skills">SKILLS</Link>
           <Link href="/stories">STORIES</Link>
@@ -41,19 +60,6 @@ const Header = () => {
           <Link href="/contact">CONTACT US</Link>
         </nav>
 
-        {/* Icons */}
-        <div className={styles.icons}>
-          <button><Search size={20} /></button>
-          <button><Heart size={20} /></button>
-          <button><ShoppingBag size={20} /></button>
-          <button><User size={20} /></button>
-          <select className={styles.langSelect}>
-            <option value="en">ENG</option>
-            <option value="es">ESP</option>
-          </select>
-        </div>
-
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className={styles.mobileNav}>
             <Link href="/shop">SHOP</Link>

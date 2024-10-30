@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-/* Newsletter Section */
+
 .newsletterSection {
   margin-bottom: 3rem;
 }
@@ -50,7 +50,7 @@
   color: black;
 }
 
-/* Contact & Currency Section */
+
 .contactSection {
   margin-bottom: 2rem;
 }
@@ -71,7 +71,7 @@
   margin-top: 0.25rem;
 }
 
-/* Links Grid */
+
 .linksGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -97,13 +97,15 @@
   text-decoration: underline;
 }
 
-/* Social Icons */
+
 .socialIcons {
   display: flex;
   gap: 1rem;
+  height: 30px;
+  width: 30px;
 }
 
-/* Payment Methods */
+
 .paymentSection {
   margin-top: 2rem;
 }
@@ -118,14 +120,13 @@
   height: 1.5rem;
 }
 
-/* Copyright */
+
 .copyright {
   margin-top: 2rem;
   text-align: center;
   font-size: 0.875rem;
 }
 
-/* Mobile Accordion */
 .accordionItem {
   border-bottom: 1px solid #333;
 }
@@ -155,7 +156,7 @@
   padding: 0.5rem 0;
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
   .linksGrid {
     display: none;
@@ -182,7 +183,7 @@
   }
 }
 
-/* Desktop Styles */
+
 @media (min-width: 769px) {
   .mobileAccordion {
     display: none;

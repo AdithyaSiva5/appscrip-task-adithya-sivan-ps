@@ -24,7 +24,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
       <div className={styles.details}>
         <h3>{product.title}</h3>
-        <p className={styles.price}>${product.price}</p>
+        <p className={styles.price}>₹{product.price}</p>
         <div className={styles.rating}>
           ⭐ {product.rating.rate} ({product.rating.count})
         </div>

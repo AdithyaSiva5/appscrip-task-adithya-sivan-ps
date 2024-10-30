@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern E-commerce Platform 🛍️
 
-## Getting Started
+## E-commerce Platform Banner
 
-First, run the development server:
+A state-of-the-art e-commerce platform built with Next.js 15, TypeScript, and React. Features include dynamic product filtering, responsive design, and comprehensive SEO optimization.
 
+## 🌟 Features
+
+- **Advanced Filtering System**: Multi-parameter product filtering
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **SEO Optimized**: Built-in metadata management and JSON-LD implementation
+- **Performance Focused**: Optimized with Next.js 15 and Turbopack
+- **Type-Safe**: Built with TypeScript for robust error prevention
+
+
+## 🚀 Live Demo
+
+Check out the live demo: [E-commerce Platform](https://your-project.vercel.app)
+
+## 🛠️ Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AdithyaSiva5/appscrip-task-adithya-sivan-ps
+cd your-repo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file:
+```env
+NEXT_PUBLIC_API_URL=your_api_url_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+## 📦 Build and Deployment
 
-To learn more about Next.js, take a look at the following resources:
+To deploy to Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Build locally to test:
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Fix any lint issues:
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+3. Deploy to Vercel:
+- Push to GitHub
+- Import your repository in Vercel
+- Configure environment variables
+- Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧰 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 15
+- React 19
+- TypeScript
+- CSS Modules
+- Lucide React Icons
+
+## 📱 Screenshots
+
+![Mobile View](https://cdn.discordapp.com/attachments/1165254874976505856/1301050756790620223/image.png?ex=67231170&is=6721bff0&hm=a7f544f5b42f1a432581ebd32b79be1eb12a8c308ea1a46e292549be96e4cf28&)
+![Desktop View](https://cdn.discordapp.com/attachments/1165254874976505856/1301051969955299431/download.png?ex=67231292&is=6721c112&hm=6a9dac5e27fd831cd1d82cbcfd429c80f1c1fa94714c447281b3dfe106d1ac39&)
+
+## 👨‍💻 Developer
+
+**Adithya Sivan P S**
+- [GitHub](https://github.com/AdithyaSiva5)
+- [LinkedIn](https://www.linkedin.com/in/adithya-sivan-p-s-b35909241/)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

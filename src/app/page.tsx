@@ -167,6 +167,7 @@ export default function Home() {
               onFilterChange={setFilters}
               isMobile={isMobile}
               isVisible={isFilterVisible}
+              onClose={() => setIsFilterVisible(false)}
             />
 
             <div className={styles.productsWrapper}>

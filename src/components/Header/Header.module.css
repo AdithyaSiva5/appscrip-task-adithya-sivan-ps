@@ -19,40 +19,68 @@
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  color:red;
+  color: red;
 }
 
 .mainHeader {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.headerTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-bottom: 1px solid #eee;
-  position: relative;
+  padding: 15px 0;
 }
 
-.logo {
+.leftSection {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 24px;
+  gap: 10px;
+}
+
+.centerSection {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .logoIcon {
-  font-size: 28px;
+  width: 40px;
+  height: 40px;
 }
 
-.desktopNav {
+.logoText {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mainNav {
   display: flex;
+  justify-content: center;
   gap: 30px;
+  padding: 15px 0;
 }
 
-.desktopNav a {
+.mainNav a {
   font-size: 14px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .icons {
@@ -80,6 +108,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 5px;
 }
 
 .mobileNav {
@@ -87,24 +116,48 @@
 }
 
 @media (max-width: 768px) {
-  .topBanner {
+  /* .topBanner {
     display: none;
-  }
+  } */
 
-  .desktopNav {
+  .mainNav {
     display: none;
   }
 
   .mobileMenuButton {
     display: block;
+    order: -1;
   }
 
-  .logo {
-    font-size: 20px;
+  .headerTop {
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .leftSection {
+    flex: none;
+    width: auto;
+  }
+
+  .centerSection {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+
+  .rightSection {
+    flex: none;
+    width: auto;
   }
 
   .logoIcon {
-    font-size: 24px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .logoText {
+    font-size: 18px;
   }
 
   .mobileNav {
@@ -126,6 +179,36 @@
   }
 
   .langSelect {
+    display: none;
+  }
+}
+
+.iconSearch {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .iconSearch {
+    display: none;
+  }
+}
+
+.bannerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: red;
+}
+
+/* Center-align on mobile */
+@media (max-width: 768px) {
+  .bannerContent {
+    justify-content: center;
+  }
+  .bannerContent span:nth-child(2),
+  .bannerContent span:nth-child(3) {
     display: none;
   }
 }
