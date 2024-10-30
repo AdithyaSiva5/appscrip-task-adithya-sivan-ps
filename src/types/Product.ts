@@ -5,7 +5,8 @@ export interface Product {
   price: number;
   rating: Rating;
   image: string;
-  category: string;
+  brand?: string;
+  category?: string;
   customizable?: boolean;
   idealFor?: string[];
   occasion?: string[];
@@ -13,7 +14,7 @@ export interface Product {
   createdAt: string | Date;
 }
 
-export type FilterState = {
+export interface FilterState {
   customizable: boolean;
   idealFor: {
     selected: string[];
@@ -47,9 +48,9 @@ export type FilterState = {
     selected: string[];
     options: string[];
   };
-};
+}
 
 export interface Rating {
-  rate: number;   
-  count: number;  
+  rate: number;
+  count: number;
 }
