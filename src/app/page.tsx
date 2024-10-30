@@ -9,6 +9,7 @@ import { api } from '@/services/api';
 import styles from './page.module.css';
 import { RecommendationSort } from '@/components/RecommendationSort/RecommendationSort';
 import { FilterSidebar } from '@/components/FilterSidebar/FilterSidebar';
+import { Filter } from 'lucide-react';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -51,16 +52,23 @@ export default function Home() {
   });
   const [sortType, setSortType] = useState('recommended');
   const [isMobile, setIsMobile] = useState(false);
+  const [showMobileFilter, setShowMobileFilter] = useState(false)
+  const [isFilterVisible, setIsFilterVisible] = useState(true)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      setIsFilterVisible(!mobile)
+    }
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  const toggleFilterVisibility = () => {
+    setIsFilterVisible(!isFilterVisible)
+  }
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -121,33 +129,51 @@ export default function Home() {
         />
 
         <div className={styles.productSection}>
+          <div className={styles.filterHeader}>
+            <span>{products.length} ITEMS</span>
+            {!isMobile && (
+              <>
+                <button
+                  onClick={toggleFilterVisibility}
+                  className={styles.filterToggleButton}
+                >
+                  {isFilterVisible ? 'HIDE FILTER' : 'SHOW FILTER'}
+                </button>
+                <div className={styles.controlsContainer}>
+                  <RecommendationSort onSortChange={setSortType} />
+                </div>
+              </>
+            )}
+          </div>
+
           {isMobile && (
             <div className={styles.mobileControls}>
-              <button className={styles.filterButton}>FILTER</button>
-              <RecommendationSort onSortChange={setSortType} />
+              <button
+                onClick={toggleFilterVisibility}
+                className={styles.mobileFilterButton}
+              >
+                {isFilterVisible ? 'HIDE FILTER' : 'FILTER'}
+              </button>
+              <RecommendationSort
+                onSortChange={setSortType}
+                className={styles.mobileSortButton}
+              />
             </div>
           )}
 
           <div className={styles.contentWrapper}>
-            {!isMobile && (
-              <FilterSidebar
-                totalItems={filteredProducts.length}
-                onFilterChange={setFilters}
-                isMobile={isMobile}
-              />
-            )}
+            <FilterSidebar
+              totalItems={products.length}
+              onFilterChange={setFilters}
+              isMobile={isMobile}
+              isVisible={isFilterVisible}
+            />
 
             <div className={styles.productsWrapper}>
-              {!isMobile && (
-                <div className={styles.sortContainer}>
-                  <RecommendationSort onSortChange={setSortType} />
-                </div>
-              )}
-
               {loading ? (
                 <div className={styles.loading}>Loading...</div>
               ) : (
-                <ProductGrid products={sortedProducts} />
+                <ProductGrid products={products} />
               )}
             </div>
           </div>

@@ -4,10 +4,12 @@ import styles from './RecommendationSort.module.css';
 
 interface RecommendationSortProps {
     onSortChange: (sortType: string) => void;
+    className?: string; // Add className prop
 }
 
-export const RecommendationSort = ({ onSortChange }: { onSortChange: (sortType: string) => void }) => {
+export const RecommendationSort = ({ onSortChange, className }: RecommendationSortProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('RECOMMENDED');
 
     const sortOptions = [
         { label: 'RECOMMENDED', value: 'recommended' },
@@ -18,12 +20,12 @@ export const RecommendationSort = ({ onSortChange }: { onSortChange: (sortType: 
     ];
 
     return (
-        <div className={styles.recommendationSort}>
+        <div className={`${styles.recommendationSort} ${className || ''}`}>
             <button
                 className={styles.sortButton}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                RECOMMENDED
+                {selectedOption}
                 <span className={styles.arrow}>▼</span>
             </button>
 
@@ -35,6 +37,7 @@ export const RecommendationSort = ({ onSortChange }: { onSortChange: (sortType: 
                             className={styles.sortOption}
                             onClick={() => {
                                 onSortChange(option.value);
+                                setSelectedOption(option.label);
                                 setIsOpen(false);
                             }}
                         >

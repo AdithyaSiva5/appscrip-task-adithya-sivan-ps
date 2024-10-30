@@ -1,88 +1,98 @@
-/* FilterSidebar.module.css */
 .filterSidebar {
-    width: 250px;
-    flex-shrink: 0;
-  }
-  
-  .filterHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.filterHeader span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.toggleButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+.filterContent {
+  padding: 1rem;
+}
+
+.filterSection {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.filterSection:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.filterSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.filterSectionHeader h3 {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.expandIcon {
+  width: 16px;
+  height: 16px;
+  color: #666;
+}
+
+.filterSectionContent {
+  margin-top: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .filterSidebar {
+    width: 100%;
+    border-right: none;
     border-bottom: 1px solid #eee;
   }
-  
-  .filterHeader span {
-    font-weight: 500;
-    font-size: 14px;
-  }
-  
-  .toggleButton {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 14px;
-    color: #666;
-    padding: 0.5rem;
-  }
-  
+
   .filterContent {
-    padding-right: 1rem;
+    padding-right: 0;
   }
-  
-  .filterSection {
-    margin-bottom: 2rem;
-  }
-  
-  .filterSection h3 {
-    margin-bottom: 1rem;
-    font-weight: 500;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-  
-  .checkboxLabel {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .checkboxLabel input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .unSelectAll {
-    border: none;
-    background: none;
-    color: #666;
-    font-size: 12px;
-    cursor: pointer;
-    padding: 0;
-    margin-top: 0.5rem;
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 768px) {
-    .filterSidebar {
-      width: 100%;
-    }
-  
-    .filterContent {
-      padding-right: 0;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-  
-    .filterSection:last-child {
-      margin-bottom: 0;
-    }
-  }
+}
