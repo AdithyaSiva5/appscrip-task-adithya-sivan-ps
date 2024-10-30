@@ -5,7 +5,7 @@
 }
 
 .main {
-  padding: 2rem 6rem; /* Increased from 2rem 1rem */
+  padding: 2rem 6rem; 
 }
 
 .title {
@@ -39,6 +39,7 @@
   flex-shrink: 0;
   background-color: #fff;
   border-right: 1px solid #eee;
+  
 }
 
 .filterHeader {
@@ -46,7 +47,9 @@
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #eee;
-  gap: 1rem; /* Space between items and filter button */
+  gap: 1rem; 
+  border-top: 1px solid #eee;
+
 }
 
 .filterHeader span {
@@ -55,7 +58,7 @@
 }
 
 .controlsContainer {
-  margin-left: auto; /* This pushes the sort control to the right */
+  margin-left: auto; 
 }
 
 .filterToggleButton {
@@ -70,7 +73,7 @@
 }
 
 .filterContent {
-  padding: 1.5rem; /* Increased from 1rem */
+  padding: 1.5rem; 
 }
 
 .filterSection {
@@ -136,14 +139,14 @@
   }
   
   .contentWrapper {
-    position: relative; /* Add this */
+    position: relative; 
   }
   
   .productsWrapper {
-    width: 100%; /* Add this */
+    width: 100%; 
   }
   
-  /* Update mobile controls */
+ 
   .mobileControls {
     position: sticky;
     top: 0;
