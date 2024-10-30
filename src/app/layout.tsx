@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'E-commerce Store',
     images: [
       {
-        url: 'https://ecommerce.vercel/og-image.png',
+        url: 'https://appscrip-task-adithya-sivan-ps.vercel.app/',
         width: 1200,
         height: 630,
         alt: 'E-commerce Store',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'E-commerce Store',
     description: 'Discover our premium collection of products with great deals and fast shipping.',
     creator: '@yourhandle',
-    images: ['https://ecommerce.vercel/twitter-image.png'],
+    images: ['https://appscrip-task-adithya-sivan-ps.vercel.app/twitter-image.png'],
   },
   robots: {
     index: true,
@@ -69,7 +69,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <JsonLd />
+        {children}
+      </body>
     </html>
   )
 }

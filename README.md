@@ -15,7 +15,7 @@ A state-of-the-art e-commerce platform built with Next.js 15, TypeScript, and Re
 
 ## 🚀 Live Demo
 
-Check out the live demo: [E-commerce Platform](https://your-project.vercel.app)
+Check out the live demo: [E-commerce Platform](https://appscrip-task-adithya-sivan-ps.vercel.app/)
 
 ## 🛠️ Installation
 

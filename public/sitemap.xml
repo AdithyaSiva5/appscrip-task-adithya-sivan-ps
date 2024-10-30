@@ -1,12 +1,12 @@
-<!-- import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://ecommerce.vercel.com',
+      url: 'https://appscrip-task-adithya-sivan-ps.vercel.app/',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
   ]
-} -->
+}
